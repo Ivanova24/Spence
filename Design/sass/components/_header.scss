@@ -1,0 +1,83 @@
+@use 'variables' as v;
+
+.header {
+  .header-notification {
+    padding: 20px v.$wrapper-big;
+    background-color: v.$primary-color;
+
+    &__text {
+      color: v.$just-white;
+      text-align: center;
+      font-weight: 700;
+
+      a {
+        color: inherit;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .header-navbar {
+    background-color: v.$secundary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px v.$wrapper-big;
+
+    &__logo {
+      font-weight: 700;
+      font-size: v.$font-size-titleSmall;
+    }
+
+    &__container {
+      display: none;
+
+      .header-navbar__links,
+      .header-navbar__cta {
+        a {
+          color: v.$primary-color;
+          margin-right: 24px;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .header-navbar__links {
+        display: flex;
+        align-items: center;
+      }
+
+      .header-navbar__cta {
+        .btn-cta {
+          @include v.button-bg(v.$primary-color);
+        }
+      }
+
+      @include v.breakpoint(medium) {
+        display: flex;
+      }
+
+      @include v.breakpoint(large) {
+        justify-content: space-between;
+        flex-basis: 60%;
+      }
+
+    }
+
+    &__menu {
+        i {
+          color: v.$primary-color;
+        }
+
+        @include v.breakpoint(medium) {
+          display: none;
+        }
+      }
+  }
+}

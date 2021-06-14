@@ -1,0 +1,129 @@
+@use 'variables' as v;
+
+.hero {
+  background-color: v.$secundary-color;
+  padding: 0 v.$wrapper-big;
+
+  .hero-image {
+    position: relative;
+    background-image: url("/assets/images/img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    max-width: 100%;
+    min-height: 366px;
+
+    &__earnings {
+      background-color: v.$just-white;
+      border-radius: 8px;
+      position: absolute;
+      display: grid;
+      row-gap: 14px;
+      padding: 20px;
+      top: 28px;
+      left: 28px;
+
+      hr {
+        color: v.$line-color;
+      }
+
+      .price {
+        font-weight: 700;
+      }
+
+      .btn-cta {
+        @include v.button-bg(v.$primary-color);
+      }
+
+      .btn-cta--earnings {
+        padding: 12px 30px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .hero-text {
+    padding: 40px 0;
+
+    &__title {
+      font-size: v.$font-size-titleBig;
+      margin-bottom: 8px;
+      line-height: 43.74px;
+
+      @include v.breakpoint(medium) {
+        line-height: 68.04px;
+        font-size: 56px;
+      }
+    }
+
+    &__text {
+      margin-bottom: 16px;
+    }
+
+    &__list {
+      li {
+        font-family: v.$family-font-text;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-weight: 600;
+
+        i {
+          width: 24px;
+          height: 24px;
+          margin-right: 16px;
+          font-size: 23px;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 32px;
+      }
+    }
+
+    &__form {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+
+      input {
+        border: 1px solid v.$border-input-color;
+        border-radius: 5px;
+        padding: 18px 24px;
+        max-width: 198px;
+
+        &::placeholder {
+          font-family: v.$family-font-title;
+          font-size: 16px;
+        }
+      }
+
+      .btn-cta {
+        @include v.button-bg(v.$primary-color);
+      }
+
+      @media screen and (max-width: 449px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  @include v.breakpoint(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 117.38px;
+
+    .hero-image {
+      margin-bottom: 71px;
+      height: 519px;
+      order: 1;
+    }
+
+    .hero-text {
+      padding-top: 0;
+    }
+  }
+}
