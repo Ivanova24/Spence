@@ -1,2 +1,2 @@
-# spense
- Spense is an open platform for individuals to share their unfiltered thoughts. Discuss the topics you love, and get paid for doing just that.
+<h1>Spense</h1>
+<p>Spense is an open platform for people to share their unfiltered thoughts. Talk about the topics you like and earn money for doing it.</p>
